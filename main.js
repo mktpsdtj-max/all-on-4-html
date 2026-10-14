@@ -1,13 +1,4 @@
-/* ============================================================
-   PERFECT SMILE DENTAL — ALL-ON-4
-   Interacciones de la página. Sin dependencias.
-   Cada bloque es independiente: si su sección no existe en la
-   página, simplemente no hace nada.
-   ============================================================ */
 
-/* ------------------------------------------------------------
-   1. Aparición al hacer scroll (.psd-reveal)
-   ------------------------------------------------------------ */
 (function scrollReveal() {
   const els = document.querySelectorAll('.psd-reveal');
   if (!('IntersectionObserver' in window)) {
@@ -149,4 +140,52 @@
     if (frame && (e.key === 'Enter' || e.key === ' ')) { e.preventDefault(); openModal(frame); }
     if (e.key === 'Escape' && modal.classList.contains('is-open')) closeModal();
   });
+})();
+
+
+(function loopVideos() {
+  const videos = Array.from(document.querySelectorAll('.video-frame__loop'));
+  if (!videos.length) return;
+
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const modal = document.getElementById('psd-video-modal');
+  const inView = new Map();
+
+  const shouldPlay = (v) =>
+    !reduceMotion && inView.get(v) && !(modal && modal.classList.contains('is-open'));
+
+  const sync = (v) => {
+    if (shouldPlay(v)) {
+      v.play().catch(() => {}); // si el navegador bloquea el autoplay, se queda el poster
+    } else {
+      v.pause();
+    }
+  };
+
+  videos.forEach((v) => {
+    v.muted = true; // obligatorio para autoplay en iPhone y Chrome
+    if (reduceMotion) v.removeAttribute('autoplay');
+  });
+
+  if ('IntersectionObserver' in window) {
+    const io = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((e) => {
+          inView.set(e.target, e.isIntersecting);
+          sync(e.target);
+        });
+      },
+      { threshold: 0.25 }
+    );
+    videos.forEach((v) => io.observe(v));
+  } else {
+    videos.forEach((v) => { inView.set(v, true); sync(v); });
+  }
+
+  if (modal) {
+    new MutationObserver(() => videos.forEach(sync)).observe(modal, {
+      attributes: true,
+      attributeFilter: ['class'],
+    });
+  }
 })();

@@ -1,6 +1,4 @@
-/* ============================================================ */
-/* PERFECT SMILE DENTAL — SISTEMA DE DISEÑO                      */
-/* ============================================================ */
+
 
 :root {
     /* --- Marca (azules del cliente, sin cambios de identidad) --- */
@@ -1386,3 +1384,30 @@ html { scroll-behavior: smooth; }
   text-align: center;
   padding: 24px;
 }
+
+/* ============================================================ */
+/* VIDEO EN LOOP (vista previa automática, sin sonido)           */
+/* ============================================================ */
+
+/* El video ocupa el marco igual que la imagen de vista previa */
+.video-frame-inner .video-frame__loop {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Con el video ya en movimiento, el botón grande de play estorba:
+   se vuelve un botón chico de "ver con sonido" en la esquina. */
+.video-frame-inner.is-loop .video-pulse-ring { display: none; }
+.video-frame-inner.is-loop .video-play-btn {
+  top: auto;
+  left: auto;
+  right: 16px;
+  bottom: 16px;
+  width: 52px;
+  height: 52px;
+  transform: none;
+}
+.video-frame-inner.is-loop:hover .video-play-btn { transform: scale(1.08); }
+.video-frame-inner.is-loop .video-caption-chip { right: 84px; }
