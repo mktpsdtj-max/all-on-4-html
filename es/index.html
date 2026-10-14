@@ -86,7 +86,7 @@
                 especialistas de clase mundial en Tijuana.
               </p>
               <div class="hero__actions">
-                <a href="#contacto" class="btn btn--accent">Agenda tu Evaluación Gratuita Hoy</a>
+                <a href="#contacto" class="btn btn--accent" data-form-open>Agenda tu Evaluación Gratuita Hoy</a>
                 <a href="#precios" class="btn btn--ghost-light">Ver Opciones de Precios y Ahorros</a>
               </div>
             </div>
@@ -821,4 +821,64 @@
     </div>
     <script src="/main.js" defer></script>
   </body>
+
+  <div class="form-modal" id="psd-form-modal" aria-hidden="true">
+  <div class="form-modal__backdrop" data-form-close></div>
+  <div class="form-modal__dialog" role="dialog" aria-modal="true" aria-labelledby="psd-form-title">
+    <div class="form-modal__head">
+      <div>
+      <h2 class="form-modal__title" id="psd-form-title" data-form-open>Agenda tu evaluación gratuita</h2>
+        <p class="form-modal__sub">Déjanos tus datos y nuestro equipo te contactará.</p>
+      </div>
+            <button type="button" class="form-modal__close" data-form-close aria-label="Cerrar formulario">
+        <span class="material-symbols-outlined">close</span>
+      </button>
+    </div>
+    <div class="form-modal__body">
+      <iframe
+        src="https://link.perfectsmiledental.com.mx/widget/form/9kd0kgYXwSfFVvRTpFCh"
+        style="width:100%;height:100%;border:none;border-radius:3px"
+        id="inline-9kd0kgYXwSfFVvRTpFCh"
+        data-layout="{'id':'INLINE'}"
+        data-trigger-type="alwaysShow"
+        data-trigger-value=""
+        data-activation-type="alwaysActivated"
+        data-activation-value=""
+        data-deactivation-type="neverDeactivate"
+        data-deactivation-value=""
+        data-form-name="Landing Contact Form "
+        data-height="592"
+        data-layout-iframe-id="inline-9kd0kgYXwSfFVvRTpFCh"
+        data-form-id="9kd0kgYXwSfFVvRTpFCh"
+        data-cookie-consent="true"
+        data-cookie-consent-provider="auto"
+        title="Landing Contact Form "
+      ></iframe>
+    </div>
+  </div>
+</div>
+
+<div class="form-modal form-modal--wide" id="psd-calendar-modal" aria-hidden="true">
+  <div class="form-modal__backdrop" data-form-close></div>
+  <div class="form-modal__dialog" role="dialog" aria-modal="true" aria-labelledby="psd-calendar-title">
+    <div class="form-modal__head">
+      <div>
+  <h2 class="form-modal__title" id="psd-calendar-title">Agenda tu evaluación gratuita</h2>
+        <p class="form-modal__sub">Elige el día y la hora que mejor te acomoden.</p>
+      </div>
+      <button type="button" class="form-modal__close" data-form-close aria-label="Cerrar calendario">
+        <span class="material-symbols-outlined">close</span>
+      </button>
+    </div>
+    <div class="form-modal__body form-modal__body--calendar">
+      <iframe
+        data-src="https://link.perfectsmiledental.com.mx/widget/bookings/psdvideo"
+      title="Agenda tu evaluación gratuita"
+        scrolling="yes"
+      ></iframe>
+    </div>
+  </div>
+</div>
+<script src="https://link.perfectsmiledental.com.mx/js/form_embed.js"></script>
+</body>
 </html>

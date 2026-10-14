@@ -85,7 +85,7 @@
                 Tijuana.
               </p>
               <div class="hero__actions">
-                <a href="https://link.perfectsmiledental.com.mx/widget/form/9kd0kgYXwSfFVvRTpFCh" class="btn btn--accent" target="_blank">Book Your Free Evaluation Today</a>
+                <a href="https://link.perfectsmiledental.com.mx/widget/form/9kd0kgYXwSfFVvRTpFCh" class="btn btn--accent" data-form-open>Book Your Free Evaluation Today</a>
                 <a href="#precios" class="btn btn--ghost-light">View Pricing and Savings Options</a>
               </div>
             </div>
@@ -445,8 +445,7 @@
                   <span class="visit__label">2nd visit</span> <span class="visit__price"> $2,500 USD </span>
                 </li>
               </ol>
-              <a href="https://link.perfectsmiledental.com.mx/widget/bookings/psdvideo" class="btn btn--accent plan__cta" target="_blank"> Book your free evaluation </a>
-            </article>
+<a href="https://link.perfectsmiledental.com.mx/widget/bookings/psdvideo" class="btn btn--accent plan__cta" target="_blank" data-calendar-open> Book your free evaluation </a>            </article>
             <article class="plan plan--dark">
               <header class="plan__head">
                 <span class="plan__badge"> Package <strong>PLATINUM</strong> </span>
@@ -466,8 +465,7 @@
                   <span class="visit__label">2nd visit</span> <span class="visit__price"> $5,000 USD </span>
                 </li>
               </ol>
-              <a href="https://link.perfectsmiledental.com.mx/widget/bookings/psdvideo" class="btn btn--white plan__cta" target="_blank"> Book your free evaluation </a>
-            </article>
+<a href="https://link.perfectsmiledental.com.mx/widget/bookings/psdvideo" class="btn btn--white plan__cta" target="_blank" data-calendar-open> Book your free evaluation </a>            </article>
           </div>
           <!-- Qué incluye -->
           <div class="includes">
@@ -524,6 +522,7 @@
 
         </div>
       </section>
+
       <section id="historias" class="section section--white" style="margin-top: -30px">
         <div class="container">
           <div class="section-intro section-intro--wide psd-reveal">
@@ -737,14 +736,7 @@
                 <span class="fact__label">Back home the same day</span>
               </li>
             </ul>
-            <a
-              href="https://www.google.com/maps/dir/?api=1&destination=32.5303859,-117.024724"
-              class="btn btn--accent"
-              target="_blank"
-              rel="noopener"
-            >
-              <span class="material-symbols-outlined" style="font-size: 20px">directions</span> Get directions
-            </a>
+         
           </div>
           <div class="loc__map">
             <div class="map-frame">
@@ -776,7 +768,7 @@
             <a href="sms:+16198155283" class="btn btn--white btn--full"
               >Request an In-Person Appointment and Travel Plan</a
             >
-            <a href="#" class="btn btn--ghost-light btn--full">Schedule a Free Video Consultation</a>
+            <a href="#" class="btn btn--ghost-light btn--full" data-form-open>Schedule a Free Video Consultation</a>
           </div>
           <div class="contact-row">
             <a href="sms:+16198155283" class="contact-pill">
@@ -816,5 +808,27 @@
       </div>
     </div>
     <script src="/main.js" defer></script>
+
+    <div class="form-modal form-modal--wide" id="psd-calendar-modal" aria-hidden="true">
+  <div class="form-modal__backdrop" data-form-close></div>
+  <div class="form-modal__dialog" role="dialog" aria-modal="true" aria-labelledby="psd-calendar-title">
+    <div class="form-modal__head">
+      <div>
+        <h2 class="form-modal__title" id="psd-calendar-title">Book your free evaluation</h2>
+        <p class="form-modal__sub">Pick the day and time that work best for you.</p>
+      </div>
+      <button type="button" class="form-modal__close" data-form-close aria-label="Close calendar">
+        <span class="material-symbols-outlined">close</span>
+      </button>
+    </div>
+    <div class="form-modal__body form-modal__body--calendar">
+      <iframe
+        data-src="https://link.perfectsmiledental.com.mx/widget/bookings/psdvideo"
+        title="Book your free evaluation"
+        scrolling="yes"
+      ></iframe>
+    </div>
+  </div>
+</div>
   </body>
 </html>
