@@ -226,7 +226,7 @@ html { scroll-behavior: smooth; }
 }
 .section-heading--light { color: #fff; }
 
-.section-intro { max-width: 45ch; margin-bottom: clamp(2.5rem, 4vw, 3.5rem); }
+.section-intro { max-width: 46ch!important; margin-bottom: clamp(2.5rem, 4vw, 3.5rem); }
 .section-intro--wide { max-width: 52ch; }
 
 .section-text {
