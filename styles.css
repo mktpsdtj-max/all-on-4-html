@@ -89,7 +89,7 @@ a { color: inherit; }
 }
 .material-symbols-outlined.fill-icon { font-variation-settings: 'FILL' 1; }
 
-.container { max-width: 1400px; margin: 0 auto; padding: 0 20px; }
+.container { max-width: 1500px; margin: 0 auto; padding: 0 20px; }
 @media (min-width: 1024px) { .container { padding: 0 40px; } }
 
 /* ============================================================ */
@@ -101,12 +101,6 @@ a { color: inherit; }
     border-radius: 4px;
 }
 
-/* ============================================================ */
-/* MOVIMIENTO                                                     */
-/* Una sola entrada discreta en los encabezados de sección.       */
-/* Las tarjetas internas NO se animan: el fade-up en cada         */
-/* elemento es justamente lo que delata una plantilla.            */
-/* ============================================================ */
 .psd-reveal {
     opacity: 0;
     transform: translateY(10px);
@@ -469,7 +463,7 @@ html { scroll-behavior: smooth; }
   border-radius: 28px;
   background: linear-gradient(135deg, var(--psd-accent), var(--psd-blue-200), var(--psd-accent-light));
   box-shadow: var(--shadow-lg);
-  max-width: 480px;
+  max-width: 90%;
   margin: 0 auto;
 }
 .video-frame-inner {
@@ -1396,9 +1390,10 @@ html { scroll-behavior: smooth; }
 .video-frame-inner .video-frame__loop {
   display: block;
   width: 100%;
-  height: 100%;
+  height: 85%;
   object-fit: cover;
 }
+
 
 /* Con el video ya en movimiento, el botón grande de play estorba:
    se vuelve un botón chico de "ver con sonido" en la esquina. */
@@ -1577,3 +1572,8 @@ html { scroll-behavior: smooth; }
   min-height: 720px;
   border: 0;
 }
+
+.footer__brand img{
+max-width:80px;
+}
+
