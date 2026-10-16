@@ -3,6 +3,30 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <!-- Google Ads: etiqueta global (sin esto, gtag() no existe) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-939681913"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){ dataLayer.push(arguments); }
+  gtag('js', new Date());
+  gtag('config', 'AW-939681913');
+</script>
+
+<!-- Evento de conversión: Submit lead form - Highlevel -->
+<script>
+  function gtag_report_conversion(url) {
+    var callback = function () {
+      if (typeof url !== 'undefined') { window.location = url; }
+    };
+    gtag('event', 'conversion', {
+      send_to: 'AW-939681913/vfXbCKzvhZ8dEPnQicAD',
+      value: 1.0,
+      currency: 'USD',
+      event_callback: callback
+    });
+    return false;
+  }
+</script>
     <title>Implantes Dentales All-on-4 en Tijuana | Perfect Smile Dental</title>
 
         <!-- Favicon -->
@@ -57,6 +81,15 @@
 
   gtag('config', 'AW-939681913');
 </script>
+<!-- Event snippet for Submit lead form - Highlevel conversion page -->
+<script>
+  gtag('event', 'conversion', {
+      'send_to': 'AW-939681913/vfXbCKzvhZ8dEPnQicAD',
+      'value': 1.0,
+      'currency': 'USD'
+  });
+</script>
+
   </head>
   <body>
     <header class="navbar">

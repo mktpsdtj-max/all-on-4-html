@@ -343,3 +343,36 @@ document.querySelectorAll('.bars--compare').forEach((el) => {
     update();
   });
 })();
+
+/* ============================================================ */
+/* 8. CONVERSIÓN DE GOOGLE ADS AL ENVIAR EL FORMULARIO GHL       */
+/* El formulario está en un iframe de otro dominio, así que no   */
+/* vemos el clic en "Enviar": escuchamos el aviso que manda el   */
+/* iframe al terminar. Se dispara una sola vez por visita.       */
+/* ============================================================ */
+(function ghlConversion() {
+  var GHL_ORIGIN = 'https://all-on-4.perfectsmiledental.com.mx';
+  var DEBUG = false; // pon true para ver en consola los mensajes del iframe
+  var sent = false;
+
+  function fire(source) {
+    if (sent || typeof gtag_report_conversion !== 'function') return;
+    sent = true;
+    gtag_report_conversion();
+    if (DEBUG) console.log('[PSD] Conversión enviada desde:', source);
+  }
+
+  window.addEventListener('message', function (e) {
+    if (e.origin !== GHL_ORIGIN) return;
+
+    var raw = e.data;
+    var text = typeof raw === 'string' ? raw : JSON.stringify(raw || '');
+    if (DEBUG) console.log('[PSD] Mensaje GHL:', raw);
+
+    // Solo el formulario (9kd0kgYXwSfFVvRTpFCh) cuenta como lead,
+    // y solo cuando el mensaje indica envío, no al cargar o cambiar de alto.
+    var isSubmit = /submit|submitted|form-submit|set-sticky-contacts/i.test(text);
+    var isResize = /height|resize|iframe-height/i.test(text) && !isSubmit;
+    if (isSubmit && !isResize) fire(text.slice(0, 80));
+  });
+})();
